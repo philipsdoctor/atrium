@@ -1,5 +1,5 @@
 # Atrium
-Atrium is an open-source assertion framework for Kotlin.
+Atrium is an open-source assertion library for Kotlin.
 It is licensed under [Apache 2.0](http://opensource.org/licenses/Apache2.0).
 
 - Atrium's source code can be found on github: [robstoll/atrium](https://github.com/robstoll/atrium)
@@ -15,5 +15,6 @@ You are very welcome to contribute:
 
 ## Versions
 
+- [0.4.0](0.4.0)
 - [0.3.0](0.3.0)
 - [0.2.0](0.2.0)
