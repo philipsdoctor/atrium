@@ -11,6 +11,7 @@ It is licensed under [Apache 2.0](http://opensource.org/licenses/Apache2.0).
 You are very welcome to contribute:
 - [open an issue or create a feature request](https://github.com/robstoll/atrium/issues/new)
 - [fork the repository](https://github.com/robstoll/atrium#fork-destination-box) and make a pull request
+- Have a lookt at [CONTRIBUTING](https://github.com/robstoll/atrium/blob/master/.github/CONTRIBUTING.md) for more ideas
 
 ## Versions
 
