@@ -21,3 +21,11 @@ import ch.tutteli.atrium.creating.AssertionPlant
 class IterableContainsBuilder<out E, out T : Iterable<E>, out S : IterableContains.SearchBehaviour>(
     plant: AssertionPlant<T>, searchBehaviour: S
 ) : ContainsBuilder<T, S>(plant, searchBehaviour)
+
+class ArrayContainsBuilder<out T, out S : IterableContains.SearchBehaviour>(
+    plant: AssertionPlant<Array<out T>>, searchBehaviour: S
+) : ContainsBuilder<Array<out T>, S>(plant, searchBehaviour)
+
+class FloatArrayContainsBuilder<out S : IterableContains.SearchBehaviour>(
+    plant: AssertionPlant<FloatArray>, searchBehaviour: S
+) : ContainsBuilder<FloatArray, S>(plant, searchBehaviour)

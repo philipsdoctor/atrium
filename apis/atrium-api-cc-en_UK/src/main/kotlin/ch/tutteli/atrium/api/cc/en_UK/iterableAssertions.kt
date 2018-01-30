@@ -3,6 +3,8 @@ package ch.tutteli.atrium.api.cc.en_UK
 import ch.tutteli.atrium.api.cc.en_UK.assertions.iterable.contains.builders.IterableContainsNotCheckerBuilder
 import ch.tutteli.atrium.assertions._containsBuilder
 import ch.tutteli.atrium.assertions._containsNotBuilder
+import ch.tutteli.atrium.assertions.iterable.contains.builders.ArrayContainsBuilder
+import ch.tutteli.atrium.assertions.iterable.contains.builders.FloatArrayContainsBuilder
 import ch.tutteli.atrium.assertions.iterable.contains.builders.IterableContainsBuilder
 import ch.tutteli.atrium.assertions.iterable.contains.searchbehaviours.IterableContainsInAnyOrderSearchBehaviour
 import ch.tutteli.atrium.assertions.iterable.contains.searchbehaviours.IterableContainsNoOpSearchBehaviour
@@ -15,7 +17,19 @@ import ch.tutteli.atrium.creating.AssertionPlant
  *
  * @return The newly created builder.
  */
-val <E, T : Iterable<E>> Assert<T>.contains: IterableContainsBuilder<E, T, IterableContainsNoOpSearchBehaviour>
+//val <E, T : Iterable<E>> Assert<T>.contains: IterableContainsBuilder<E, T, IterableContainsNoOpSearchBehaviour>
+//    get() = _containsBuilder(this)
+
+/**
+ * Creates an [IterableContainsBuilder] based on this [AssertionPlant] which allows to define
+ * more sophisticated `contains` assertions.
+ *
+ * @return The newly created builder.
+ */
+val <E> Assert<Array<E>>.contains: IterableContainsBuilder<E, Iterable<E>, IterableContainsNoOpSearchBehaviour>
+    get() = _containsBuilder(returnValueOf(this.subject::asIterable))
+
+val Assert<FloatArray>.contains: FloatArrayContainsBuilder<IterableContainsNoOpSearchBehaviour>
     get() = _containsBuilder(this)
 
 /**

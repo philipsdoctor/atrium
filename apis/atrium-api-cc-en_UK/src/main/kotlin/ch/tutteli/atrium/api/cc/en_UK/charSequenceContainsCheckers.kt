@@ -3,6 +3,7 @@ package ch.tutteli.atrium.api.cc.en_UK
 import ch.tutteli.atrium.api.cc.en_UK.assertions.charsequence.contains.builders.*
 import ch.tutteli.atrium.assertions.charsequence.contains.CharSequenceContains.SearchBehaviour
 import ch.tutteli.atrium.assertions.charsequence.contains.builders.CharSequenceContainsBuilder
+import ch.tutteli.atrium.assertions.iterable.contains.builders.FloatArrayContainsBuilder
 
 /**
  * Restricts a `contains` assertion by specifying that the number of occurrences of the object which we are looking
@@ -48,6 +49,9 @@ fun <T : CharSequence, S : SearchBehaviour> CharSequenceContainsAtLeastCheckerBu
  * @throws IllegalArgumentException In case [times] equals to zero; use [containsNot] instead.
  */
 fun <T : CharSequence, S : SearchBehaviour> CharSequenceContainsBuilder<T, S>.exactly(times: Int): CharSequenceContainsExactlyCheckerBuilder<T, S>
+    = CharSequenceContainsExactlyCheckerBuilder(times, this)
+
+fun <S : FloatArray.SearchBehaviour> FloatArrayContainsBuilder<S>.exactly(times: Int): FloatArrayContainsExactlyCheckerBuilder<S>
     = CharSequenceContainsExactlyCheckerBuilder(times, this)
 
 /**

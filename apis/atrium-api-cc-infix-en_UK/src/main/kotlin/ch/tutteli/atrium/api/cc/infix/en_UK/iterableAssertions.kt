@@ -18,6 +18,15 @@ infix fun <E, T : Iterable<E>> Assert<T>.to(@Suppress("UNUSED_PARAMETER") contai
 
 /**
  * Creates an [IterableContainsBuilder] based on this [AssertionPlant] which allows to define
+ * more sophisticated `contains` assertions.
+ *
+ * @return The newly created builder.
+ */
+infix fun Assert<FloatArray>.to(@Suppress("UNUSED_PARAMETER") contain: contain)
+    = _containsBuilder(this)
+
+/**
+ * Creates an [IterableContainsBuilder] based on this [AssertionPlant] which allows to define
  * more sophisticated `contains not` assertions.
  *
  * @return The newly created builder.
